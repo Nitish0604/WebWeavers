@@ -18,7 +18,7 @@ const Navbar = (props) => {
 // 33363b 3a5985
   return (
     <div className='flex flex-col fixed'>
-        <div className='flex justify-between bg-[#d09e72] items-center w-[100vw] max-w-[1640px]  h-[50px] px-2'>
+        <div className='flex justify-between bg-[#d09e72] items-center w-[100vw] max-w-[1640px] h-[50px] px-2'>
             <div className='flex flex-row items-center'>
                 <Link to="/"> 
                     <img 
