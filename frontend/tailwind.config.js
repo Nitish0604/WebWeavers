@@ -7,7 +7,8 @@ module.exports = {
     colors: {
       'beige': '#efefc3',
       'lightgreen': '#b4b431',
-      'deepgreen':'#64641b'
+      'deepgreen':'#64641b',
+      'blue':'#'
     },
     extend: {},
   },
