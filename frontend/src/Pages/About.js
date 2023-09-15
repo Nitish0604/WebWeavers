@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
 import green from "../assets/img.jpg"
 import mission from "../assets/mission.jpg"
 import logo from "../assets/Govlogo.png";
