@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from "../Components/Navbar"
-import ImageSlider from '../Components/ImageSlider';
+//import ImageSlider from '../Components/ImageSlider';
 
 
 function Home( props ) {
@@ -16,7 +16,7 @@ function Home( props ) {
      
         <Navbar />
       <div className=''>
-           <ImageSlider />
+          
            </div>
      </div>
    
