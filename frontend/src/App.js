@@ -1,10 +1,10 @@
 import "./App.css";
 //import { useState } from "react";
-import { Route ,Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Homepage";
 import { Informatory } from "./Pages/Informatory";
-//import About from "./Pages/About";
-// import SignUp from "./Pages/SignUp";
+
+import About from "./Pages/About";
 
 
 
@@ -12,22 +12,25 @@ import { Informatory } from "./Pages/Informatory";
 
 
 function App() {
- // const [isLoggedIn ,setIsLoggedIn] =useState(false);
+  // const [isLoggedIn ,setIsLoggedIn] =useState(false);
   return (
-    
-  <div className=' app'>
-  
+
+    <div className=' app'>
+
       <Routes>
 
       <Route path="/" element={<Home/>} />
       <Route path='/informatory' element={<Informatory/>}></Route>
     {/* //<Route path="/about" element = {<About  />} /> */}
+=======
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
 
-    
+
       </Routes>
 
     </div>
-   
+
   );
 }
 
