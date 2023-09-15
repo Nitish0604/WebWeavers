@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import green from "../assets/img.jpg"
+import mission from "../assets/mission.jpg"
 
 const About = () => {
     return (
@@ -17,7 +18,7 @@ const About = () => {
                         </p>
                     </div>
                     <div className="image">
-                        <img className="h-[18.75rem] w-[25rem]" src={green} alt="img"/>
+                        <img className="h-[18.75rem] w-[25rem]" src={mission} alt="img"/>
                     </div>
                 </div>
                 <div className="whatWeDo flex gap-x-8 justify-center items-center h-[480px] bg-gradient-to-r from-[#f4c8a2ab] to-[#d09e72]">
