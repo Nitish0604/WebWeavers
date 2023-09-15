@@ -17,7 +17,7 @@ const Navbar = (props) => {
     // }
 
   return (
-    <div className='flex  top-[0%] fixed bg-[#009966] overflow-x-hidden  z-20 overflow-y-hidden items-center w-[100vw] max-w-[1640px]  h-[50px]'>
+    <div className='flex  top-[0%] fixed bg-[#d09e72] overflow-x-hidden  z-20 overflow-y-hidden items-center w-[100vw] max-w-[1640px]  h-[50px]'>
           <Link to="/"> 
             <img 
             className=' text-black  mt-3'
@@ -36,9 +36,9 @@ const Navbar = (props) => {
                   <options>Bengali</options>
           </select>  */}
               </div>
-        <div className='flex  top-[7%] fixed -z-10 bg-[#00CC66] content-center  justify-center overflow-x-hidden  overflow-y-hidden items-center w-[100vw] max-w-[1640px]  mx-auto h-[60px]'>
+        <div className='flex  top-[7%] fixed -z-10 bg-[#ccae92ab] content-center  justify-center overflow-x-hidden  overflow-y-hidden items-center w-[100vw] max-w-[1640px]  mx-auto h-[60px]'>
             <nav>
-                <ul className=' text-[#ffffff] flex gap-x-6'>
+                <ul className=' text-[#000000] flex gap-x-6'>
                       {/* <img className='  w-20 h-14'
                           src={logo2} alt="Logo" width={50} height={15} loading="lazy">
                           
