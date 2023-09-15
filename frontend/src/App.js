@@ -1,9 +1,10 @@
 import "./App.css";
-//import { useState } from "react";
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Homepage";
 import { Informatory } from "./Pages/Informatory";
 
+import Auth from "./Pages/Auth"
 import About from "./Pages/About";
 
 
@@ -25,6 +26,7 @@ function App() {
 =======
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path ="/auth" element={<Auth/>}/>
 
 
       </Routes>
