@@ -12,8 +12,10 @@ const dbconnect = require("./config/db");
 
 dbconnect();
 
+
+
+app.use(express.json());
 app.use("/api/user", userRoutes);
-app.use(express.json()); // to accept json data
 
 
 app.use(notFound);
