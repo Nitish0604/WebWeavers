@@ -1,12 +1,14 @@
 import React from 'react'
 import Navbar from "../Components/Navbar"
+
+import Info from '../Components/Info';
+import Statistics from '../Components/Statistics';
 import pic1 from "../assets/ewaste13.png"
 import pic2 from "../assets/ewaste14.png"
 import pic3 from "../assets/ewaste10.png"
 import pic4 from "../assets/leaf1.webp"
 import pic5 from "../assets/ewastelogo.png"
 import pic6 from "../assets/circle1.png"
-
 //import ImageSlider from '../Components/ImageSlider';
 
 
@@ -15,9 +17,13 @@ function Home( props ) {
 //     let isLoggedIn = props.isLoggedIn;
 //     let setIsLoggedIn = props.setIsLoggedIn;
 //     //const navigate = useNavigate();
-   
   return (
-    
+
+     <div>
+        <Navbar/>
+        
+        {/* <Statistics/> */}
+     </div>
       <div className='flex '>
         <div>
       <Navbar />
@@ -48,11 +54,12 @@ function Home( props ) {
         <img className=' absolute bottom-0 right-0'
             src={pic5} alt='ewaste' width={640} height={380}></img>
         </div>
-        
+        <Info/>
       </div>
      
    
     
+
    );
 }
 export default Home;
