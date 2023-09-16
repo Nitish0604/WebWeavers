@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from "../assets/Govlogo.png"
 
-
 import { Link } from "react-router-dom"
 const Navbar = (props) => {
     // 33363b 3a5985
