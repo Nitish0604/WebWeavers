@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import swachhBharat from "../assets/swachh-bharat.png"
 import digitalIndia from "../assets/digital-india-logo.png"
@@ -8,27 +9,38 @@ const Footer = () => {
     return (
         <div>
             {/* <hr></hr> */}
-            <div className='bg-gradient-to-r from-[#ccae92ab] via-[#d09e72] to-[#ccae92ab] mx-auto px-[100px] flex-col gap-y-2'>
-                <div className='flex-col gap-y-6'>
+            <div className='bg-gradient-to-r from-[#ccae92ab] via-[#d09e72] to-[#ccae92ab] mx-auto px-[100px] '>
+                <div className='flex justify-left gap-x-[210px]'>
                     <div className=''>
-                        <div className='flex justify-evenly '>
+                        <div className='flex-col justify-evenly mt-6 space-y-5'>
                             <div>
                                 <a>Factory Login</a>
                             </div>
                             <div>
-                                <a>Admin Login</a>
+                                Terms of Service
+                            </div>
+                            <div>
+                                Privacy Policy
                             </div>
                         </div>
                     </div>
-                    <div className='flex justify-evenly mt-6'>
+                    <div className='flex-col justify-evenly mt-6 space-y-5'>
                         <div>
-                            Terms of Service
-                        </div>
-                        <div>
-                            Privacy Policy
+                            <a>Admin Login</a>
                         </div>
                         <div>
                             Contact:-
+                        </div>
+                    </div>
+                    <div className='flex-col justify-evenly mt-6 space-y-5 translate-x-10'>
+                        <div>
+                            <a href='/informatory'>Informatory</a>
+                        </div>
+                        <div>
+                            <a href='/about'>About</a>
+                        </div>
+                        <div>
+                            <a href='/rewards'>Rewards</a>
                         </div>
                     </div>
                 </div>
