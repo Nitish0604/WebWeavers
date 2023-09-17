@@ -23,8 +23,6 @@ function App() {
       <Route path="/" element={<Home/>} />
       <Route path='/informatory' element={<Informatory/>}></Route>
     {/* //<Route path="/about" element = {<About  />} /> */}
-=======
-        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path ="/auth" element={<Auth/>}/>
 
