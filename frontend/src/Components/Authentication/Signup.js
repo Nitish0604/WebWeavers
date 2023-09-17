@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@chakra-ui/button";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
-import { VStack } from "@chakra-ui/layout";
+import { Box, VStack } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useState } from "react";
@@ -86,51 +86,6 @@ const Signup = () => {
       setPicLoading(false);
     }
   };
-
-  // const postDetails = (pics) => {
-  //   setPicLoading(true);
-  //   if (pics === undefined) {
-  //     toast({
-  //       title: "Please Select an Image!",
-  //       status: "warning",
-  //       duration: 5000,
-  //       isClosable: true,
-  //       position: "bottom",
-  //     });
-  //     return;
-  //   }
-  //   console.log(pics);
-  //   if (pics.type === "image/jpeg" || pics.type === "image/png") {
-  //     const data = new FormData();
-  //     data.append("file", pics);
-  //     data.append("upload_preset", "chat-app");
-  //     data.append("cloud_name", "piyushproj");
-  //     fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
-  //       method: "post",
-  //       body: data,
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setPic(data.url.toString());
-  //         console.log(data.url.toString());
-  //         setPicLoading(false);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //         setPicLoading(false);
-  //       });
-  //   } else {
-  //     toast({
-  //       title: "Please Select an Image!",
-  //       status: "warning",
-  //       duration: 5000,
-  //       isClosable: true,
-  //       position: "bottom",
-  //     });
-  //     setPicLoading(false);
-  //     return;
-  //   }
-  // };
   const postDetails = async (pics) => {
     setPicLoading(true);
     if (pics === undefined) {
@@ -243,15 +198,20 @@ const Signup = () => {
           onChange={(e) => postDetails(e.target.files[0])}
         />
       </FormControl>
-      <Button
-        colorScheme="blue"
-        width="100%"
+      <Box
+        as="button"
+        bg="#edfbfd"
+        borderColor="#ccd0d5"
+        color="#4b4f56"
         style={{ marginTop: 15 }}
         onClick={submitHandler}
         isLoading={picLoading}
+        width="100%"
+        height="40px"
+        rounded="50px"
       >
-        Sign Up
-      </Button>
+        Signup
+      </Box>
     </VStack>
   );
 };

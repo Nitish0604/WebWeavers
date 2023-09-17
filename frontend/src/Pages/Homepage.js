@@ -9,8 +9,36 @@ import pic5 from "../assets/ewastelogo.png"
 import pic6 from "../assets/circle1.png"
 import Flowchart from '../Components/Flowchart';
 import Stats from '../Components/Stats';
-function Home(props) 
-{
+import Footer from '../Components/Footer';
+import { useToast } from '@chakra-ui/react';
+// import ScrollText from '../Components/ScrollText';
+import data from '../Components/data';
+import Locate from '../Components/Locate';
+import { useEffect } from 'react';
+function Home(props) {
+  const toast=useToast();
+  function popup() {
+    toast({
+      title: `${data[i].text}`,
+      status: "info",
+      duration: 5000,
+      isClosable: true,
+      position: "right",
+    });
+  }
+  let i=0
+  useEffect(() => {
+    const popupInterval = setInterval(() => {
+      popup();
+      i++;
+      if (i == 4) {
+        i = 0;
+      }
+    }, 40000);
+    return () => {
+      clearInterval(popupInterval);
+    };
+  }, []);
   return (
     <div>
       <div className='flex flex-col'>
@@ -72,13 +100,19 @@ function Home(props)
           </div>
         </div>
         <div>
-          <Flowchart/>
+          <Flowchart />
         </div>
         <div>
-          <Info/> 
+          <Locate />
         </div>
         <div>
-          <Stats/>
+          <Stats />
+        </div>
+        <div>
+          <Info />
+        </div>
+        <div>
+          <Footer/>
         </div>
       </div>
     </div>

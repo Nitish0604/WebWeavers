@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.example::-webkit-scrollbar {
+  display: none;
+}
+.imagee{
+  min-height: 100vh;
+  display: flex;
+  background-image: url("./assets/bglogin.webp");
+  background-position: center;
+  background-size: cover;
+}

@@ -12,40 +12,84 @@ import {
 
 import Signup from "../Components/Authentication/Signup";
 import Login from "../Components/Authentication/Login";
+import { Link } from "react-router-dom";
+import bglogin from "../assets/bglogin.webp";
+import logo2 from "../assets/weblogo2.png";
 
-function Auth() {
+const Auth = () => {
   return (
-    <Container maxW="xl" centerContent>
-      <Box
-        display="flex"
-        justifyContent="center"
-        p={3}
-        bg="white"
-        w="100%"
-        m="40px 0 15px 0"
-        borderRadius="lg"
-        borderWidth="1px"
-      >
-        <Text fontSize="4xl" fontFamily="Work sans">ESwachh</Text>
-      </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
-        <Tabs isFitted variant="soft-rounded">
-          <TabList mb="1em">
-            <Tab>Login</Tab>
-            <Tab>Sign Up</Tab>
-          </TabList>
-          <TabPanels>
-            <TabPanel>
-              <Login />
-            </TabPanel>
-            <TabPanel>
-              <Signup />
-            </TabPanel>
-          </TabPanels>
-        </Tabs>
-      </Box>
-    </Container>
+    <div>
+      <div className="  flex fixed bg-[#edfbfd] justify-between  overflow-x-hidden  overflow-y-hidden items-center w-[100vw] max-w-[1640px]  mx-auto h-[60px] z-50">
+        <nav className="flex items-center mx-auto justify-between">
+          <ul className=" text-[#000000] flex gap-x-6 font-semibold">
+            {/* <img className='  w-20 h-14'bg-[#ead67bd7]
+                            src={logo2} alt="Logo" width={50} height={15} loading="lazy">
+                            
+                            </img>  */}
+
+            <li className="  hover:text-deepgreen hover:text-xl  hover:px-2 ">
+              <Link to="/informatory">Informatory</Link>
+            </li>
+            <li className=" hover:text-deepgreen hover:text-xl hover:px-2 ">
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li className=" hover:text-deepgreen hover:text-xl  hover:px-2 ">
+              <Link to="/rewards">Rewards</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="  flex  items-center justify-between ">
+          <div className=" mr-5 ">
+            <select className="w-36  font-semibold h-8 items-center px-3 bg-[#dcf0f5]">
+              <option className="bg-[#f4c8a2ab] hover:bg-[#f4c8a2ab] ">
+                English
+              </option>
+              <option className="bg-[#f4c8a2ab] hover:bg-[#f4c8a2ab] ">
+                Bengali
+              </option>
+              <option className="bg-[#f4c8a2ab] hover:bg-[#f4c8a2ab] ">
+                Bengali
+              </option>
+              <option className="bg-[#f4c8a2ab] hover:bg-[#f4c8a2ab] ">
+                Bengali
+              </option>
+              <option className="bg-[#f4c8a2ab] hover:bg-[#f4c8a2ab] ">
+                Bengali
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div className="imagee">
+        {/* <div className=" bg-cover fixed ">
+          <img className=" relative" src={bglogin} width={1550}></img>
+        </div> */}
+        <div className=" mt-48 ml-44 ">
+          <Container maxW="xl">
+            <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+              <Tabs isFitted variant="soft-rounded">
+                <TabList mb="1em">
+                  <Tab _selected={{ color: "black", bg: "#edfbfd" }}>Login</Tab>
+                  <Tab _selected={{ color: "black", bg: "#edfbfd" }}>
+                    Sign Up
+                  </Tab>
+                </TabList>
+                <TabPanels>
+                  <TabPanel>
+                    <Login />
+                  </TabPanel>
+                  <TabPanel>
+                    <Signup />
+                  </TabPanel>
+                </TabPanels>
+              </Tabs>
+            </Box>
+          </Container>
+        </div>
+        <img className=" absolute right-40 top-40 z-[50]" src={logo2}></img>
+      </div>
+    </div>
   );
-}
+};
 
 export default Auth;

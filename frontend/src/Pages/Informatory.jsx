@@ -7,9 +7,8 @@ import ew4 from '../assets/ewaste11-1.png';
 import ew5 from '../assets/ewaste13-1.png';
 import ew6 from '../assets/ewaste16-1.png';
 import ew7 from '../assets/ewaste17-1.png';
-import logo from '../assets/Govlogo.png';
-import Stats from '../Components/Stats';
-import Info from '../Components/Info';
+// import logo from '../assets/Govlogo.png';
+import ew8 from '../assets/envlogo11-1.png';
 export const Informatory = () => {
   return (
     <div>
@@ -17,14 +16,16 @@ export const Informatory = () => {
             <div className='font-semibold'><Link to='/'>E-Swachh</Link></div>
             <div className='font-bold'>INFORMATORY</div>
             <div className='flex flex-row-reverse justify-between items-center'>
-                <Link to="#"> 
+                <Link to="https://parivesh.nic.in/About.aspx"> 
                     <img 
                     className='text-black'
-                    src={logo} alt="Logo" width={50} height={15} loading="lazy"></img>
+                    src={ew8} alt="Logo" width={50} height={15} loading="lazy"></img>
                 </Link>
+                <Link to="https://parivesh.nic.in/About.aspx">
                 <h5 className=' text-[#000000] text-xs font-semibold'>Ministry of Environment , Forest<br />
                     and Climate Change   
                 </h5>
+                </Link>
             </div>
         </div>
         <div className='bg-[#edfbfd] mx-auto min-h-[100vh] px-8 pb-10'>
