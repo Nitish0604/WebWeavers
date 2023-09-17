@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import logo from "../assets/emblem.png"
 import logo2 from "../assets/envlogo11-1.png"
+import logoFinal from "../assets/logoFinal.png"
 import { Link, useNavigate } from "react-router-dom";
 import { ChatState } from "../Context/ChatProvider";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
@@ -99,6 +100,7 @@ const Navbar = () => {
 
         <div>
           <div className="flex fixed  bg-[#edfbfd] justify-between items-center w-[100vw] max-w-[1640px]  mx-auto h-[60px] z-[50]">
+            <img className='h-[50px] ml-2' src={logoFinal} />
             <nav className="flex items-center mx-auto justify-between">
               <ul className=" text-[#000000] flex gap-x-6 font-semibold">
                 {/* <img className='  w-20 h-14'
