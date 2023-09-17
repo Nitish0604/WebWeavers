@@ -8,8 +8,8 @@ import indiaGov from "../assets/india-gov-logo.png"
 const Footer = () => {
     return (
         <div>
-            {/* <hr></hr> */}
-            <div className='bg-gradient-to-r from-[#ccae92ab] via-[#d09e72] to-[#ccae92ab] mx-auto px-[100px] '>
+            {/* <hr></hr> bg-gradient-to-r from-[#ccae92ab] via-[#d09e72] to-[#ccae92ab] */}
+            <div className='bg-[#edfbfd] mx-auto px-[100px] '>
                 <div className='flex justify-left gap-x-[210px]'>
                     <div className=''>
                         <div className='flex-col justify-evenly mt-6 space-y-5'>

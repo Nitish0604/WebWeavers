@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@chakra-ui/button";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
-import { VStack } from "@chakra-ui/layout";
+import { Box, VStack } from "@chakra-ui/layout";
 import { useState } from "react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
@@ -98,7 +98,7 @@ const Login = () => {
           </InputRightElement>
         </InputGroup>
       </FormControl>
-      <Button
+      {/* <Button
         colorScheme="blue"
         width="100%"
         style={{ marginTop: 15 }}
@@ -106,8 +106,22 @@ const Login = () => {
         isLoading={loading}
       >
         Login
-      </Button>
-     
+      </Button> */}
+      <Box
+        as="button"
+        bg="#edfbfd"
+        borderColor="#ccd0d5"
+        color="#4b4f56"
+        style={{ marginTop: 15 }}
+        onClick={submitHandler}
+        isLoading={loading}
+        width="250px"
+        height="40px"
+        rounded="50px"
+      >
+        Login
+      </Box>
+      ;
     </VStack>
   );
 };
