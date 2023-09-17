@@ -1,14 +1,20 @@
 import React from "react";
 import green from "../assets/img.jpg"
-import mission from "../assets/mission.jpg"
+import mission from "../assets/mission.jpeg"
 import logo from "../assets/Govlogo.png";
 import { Link } from "react-router-dom";
+import values from "../assets/values.jpeg";
+import Navbar from "../Components/Navbar";
+import about from "../assets/about.png"
+import whatWeDo from "../assets/whatWeDo.jpeg"
+import history from "../assets/history.jpeg"
+import aboutWeb from "../assets/aboutWeb.jpg"
 
 const About = () => {
     return (
       <div>
         <div>
-          <div className="flex bg-[#e6ab77] justify-between items-center w-[100vw] max-w-[1640px] h-[55px] mx-auto px-2">
+          {/* <div className="flex bg-[#d6f2f6] justify-between items-center w-[100vw] max-w-[1640px] h-[55px] mx-auto px-2">
             <div className="font-semibold">
               <Link to="/">E-Swacch</Link>
             </div>
@@ -30,10 +36,11 @@ const About = () => {
                 and Climate Change
               </h5>
             </div>
-          </div>
+          </div> */}
+          {/* <Navbar/> */}
         </div>
-        <div className="mt-32 mx-10 flex-col gap-y-4">
-          <div className="mission h-[23.75rem] flex gap-x-5 justify-center items-center my-3 ">
+        <div className="mt-0 mx-10 flex-col pt-28 gap-y-4">
+          <div className="mission h-[23.75rem] flex gap-x-5 justify-center items-center mb-3 ">
             <div className="text w-1/2">
               <h1 className="font-bold text-4xl ">Our Mission</h1>
               <p className="mt-2 text-left w-[31.25rem] space-y-3">
@@ -46,12 +53,12 @@ const About = () => {
               </p>
             </div>
             <div className="image">
-              <img className="h-[18.75rem] w-[25rem]" src={mission} alt="img" />
+              <img className="h-[18.75rem] w-[25rem]" loading="lazy" src={mission} alt="img" />
             </div>
           </div>
-          <div className="whatWeDo flex gap-x-8 justify-center items-center h-[480px] bg-gradient-to-r from-[#f4c8a2ab] to-[#d09e72]">
+          <div className="whatWeDo flex gap-x-8 justify-center items-center h-[480px] bg-gradient-to-r from-[#f4c8a2ab] to-[#d6f2f6]">
             <div className="image">
-              <img className="h-[25rem] w-[31.25rem]" src={green} alt="img" />
+              <img className="h-[400px] w-[500px] rounded-md" loading="lazy" src={whatWeDo} alt="img" />
             </div>
             <div className="text w-1/2">
               <h1 className="font-bold text-4xl ">What We Do</h1>
@@ -87,16 +94,12 @@ const About = () => {
               </p>
             </div>
             <div className="image">
-              <img className="h-[25rem] w-[31.25rem]" src={green} alt="img" />
+              <img className="h-[20rem] w-[31.25rem] rounded-md" loading="lazy" src={history} alt="img" />
             </div>
           </div>
-          <div className="values flex gap-x-5 justify-center items-center h-[28.125rem] bg-gradient-to-r from-[#d09e72] to-[#ccae92ab]">
+          <div className="values flex gap-x-5 justify-center items-center h-[28.125rem] bg-gradient-to-r from-[#d6f2f6] to-[#ccae92ab]">
             <div className="image">
-              <img
-                className="h-[23.125rem] w-[31.25rem]"
-                src={green}
-                alt="img"
-              />
+              <img className="h-[23.125rem] w-[31.25rem] rounded-md" src={values} alt="img"/>
             </div>
             <div className="text w-1/2">
               <h1 className="font-bold text-4xl ">Our Values</h1>
@@ -112,7 +115,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="website flex gap-x-5 justify-center items-center h-[38.75rem]">
+          <div className="website flex gap-x-5 justify-center items-center h-[500px]">
             <div className="text w-1/2">
               <h1 className="font-bold text-4xl ">About the Website</h1>
               <p className="mt-2 text-left">
@@ -137,7 +140,7 @@ const About = () => {
               </p>
             </div>
             <div className="image">
-              <img className="h-[25rem] w-[31.25rem]" src={green} alt="img" />
+              <img className="h-[25rem] w-[31.25rem]" src={aboutWeb} alt="img" />
             </div>
           </div>
         </div>
