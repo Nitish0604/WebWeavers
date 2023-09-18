@@ -10,9 +10,12 @@ import "mapbox-gl/dist/mapbox-gl.css";
 //import Icon from "../assets/download.png";
 //import { AiFillStar } from "react-icons/ai";
 import Navbar from "../Components/Navbar";
+import { Link } from 'react-router-dom';
+import ew8 from '../assets/envlogo11-1.png';
+import logoFinal from "../assets/logoFinal.png"
 
 const Map = () => {
-    const mapRef = useRef();
+  const mapRef = useRef();
 
 
   const [lng, setLng] = useState(78.078743);
@@ -201,9 +204,9 @@ const Map = () => {
     var a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(deg2rad(lat1)) *
-        Math.cos(deg2rad(lat2)) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c; // Distance in km
     var ans = Math.round(d * 100) / 100;
@@ -211,12 +214,54 @@ const Map = () => {
     return ans;
   }
   return (
+    <div>
     <div className=" flex flex-col">
-      <div className=" z-[100]">
+      {/* <div className=" z-[100]">
         <Navbar />
+      </div> */}
+      <div className='flex bg-[#edfbfd] justify-between items-center w-full h-[55px] mx-auto px-2'>
+        {/* <div className='font-semibold'><Link to='/'>E-Swachh</Link></div> */}
+        <Link to="/">
+          <img className='h-[50px] ml-2' src={logoFinal} />
+        </Link>
+
+        <nav className="flex items-center mx-auto justify-between">
+          <ul className=" text-[#000000] flex gap-x-6 font-semibold">
+            {/* <img className='  w-20 h-14'
+                            src={logo2} alt="Logo" width={50} height={15} loading="lazy">
+                            </img>  */}
+            <li className=" hover:text-deepgreen hover:underline">
+              <Link to="/">Home</Link>
+            </li>
+            <li className=" hover:text-deepgreen hover:underline">
+              <Link to="/about">About Us</Link>
+            </li>
+            <li className="  hover:text-deepgreen hover:underline ">
+              <Link to="/informatory">Informatory</Link>
+            </li>
+            <li className=" hover:text-deepgreen hover:underline ">
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li className=" hover:text-deepgreen hover:underline ">
+              <Link to="/rewards">Rewards</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className='flex flex-row-reverse justify-between items-center'>
+          <Link to="https://parivesh.nic.in/About.aspx">
+            <img
+              className='text-black'
+              src={ew8} alt="Logo" width={50} height={15} loading="lazy"></img>
+          </Link>
+          <Link to="https://parivesh.nic.in/About.aspx">
+            <h5 className=' text-[#000000] text-xs font-semibold'>Ministry of Environment , Forest<br />
+              and Climate Change
+            </h5>
+          </Link>
+        </div>
       </div>
 
-      <div class=" bg-black w-full flex justify-around  mt-[110px] z-[50] ">
+      <div class=" bg-black w-full flex justify-around z-[50] ">
         <div className=" bg-slate-700 w-[70%] p-1">
           <div className="w-full h-full ">
             <ReactMapGl
@@ -235,7 +280,7 @@ const Map = () => {
                   longitude={store.geometry.coordinates[0]}
                   latitude={store.geometry.coordinates[1]}
                   anchor="bottom"
-                  // offset={PointLike}
+                // offset={PointLike}
                 >
                   {/* <img src={Icon} /> */}
                 </Marker>
@@ -272,7 +317,7 @@ const Map = () => {
                       latitude: store.geometry.coordinates[1],
                     })
                   }
-                  // onClick={() => flyToStore(store)}
+                // onClick={() => flyToStore(store)}
                 >
                   {store.properties.name}{" "}
                 </span>
@@ -293,13 +338,15 @@ const Map = () => {
                 <a class="text-blue-600 hover:text-blue-800 flex items-center mt-5">
                   Get Directions
                 </a>
-               
+
               </span>
             </div>
           ))}
         </div>
       </div>
     </div>
+    </div>
+
   );
 };
 

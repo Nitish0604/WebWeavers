@@ -65,16 +65,22 @@ const Navbar = () => {
                   English
                 </option>
                 <option className="bg-[#d6f2f6] hover:bg-[#f4c8a2ab] ">
-                  Bengali
+                  Hindi
                 </option>
                 <option className="bg-[#d6f2f6] hover:bg-[#f4c8a2ab] ">
                   Bengali
                 </option>
                 <option className="bg-[#d6f2f6] hover:bg-[#f4c8a2ab] ">
-                  Bengali
+                  Tamil
                 </option>
                 <option className="bg-[#d6f2f6] hover:bg-[#f4c8a2ab] ">
-                  Bengali
+                  Marathi
+                </option>
+                <option className="bg-[#d6f2f6] hover:bg-[#f4c8a2ab] ">
+                  Kannada
+                </option>
+                <option className="bg-[#d6f2f6] hover:bg-[#f4c8a2ab] ">
+                  Malayalam
                 </option>
               </select>
             </div>
@@ -100,7 +106,9 @@ const Navbar = () => {
 
         <div>
           <div className="flex fixed  bg-[#edfbfd] justify-between items-center w-[100vw] max-w-[1640px]  mx-auto h-[60px] z-[50]">
-            <img className='h-[50px] ml-2' src={logoFinal} />
+            <Link to="/">
+              <img className='h-[50px] ml-2' src={logoFinal} />
+            </Link>
             <nav className="flex items-center mx-auto justify-between">
               <ul className=" text-[#000000] flex gap-x-6 font-semibold">
                 {/* <img className='  w-20 h-14'
