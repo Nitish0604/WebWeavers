@@ -9,37 +9,58 @@ import about from "../assets/about.png"
 import whatWeDo from "../assets/whatWeDo.jpeg"
 import history from "../assets/history.jpeg"
 import aboutWeb from "../assets/aboutWeb.jpg"
+import logoFinal from "../assets/logoFinal.png"
+import ew8 from '../assets/envlogo11-1.png';
+import Footer from "../Components/Footer";
 
 const About = () => {
     return (
       <div>
         <div>
-          {/* <div className="flex bg-[#d6f2f6] justify-between items-center w-[100vw] max-w-[1640px] h-[55px] mx-auto px-2">
-            <div className="font-semibold">
-              <Link to="/">E-Swacch</Link>
-            </div>
-            <div className="font-bold">ABOUT</div>
-            <div className="flex flex-row-reverse justify-between items-center">
-              <Link to="#">
+          <div className='flex bg-[#edfbfd] opacity-1 z-10 fixed justify-between items-center w-full h-[55px] mx-auto px-2'>
+            {/* <div className='font-semibold'><Link to='/'>E-Swachh</Link></div> */}
+            <Link to="/">
+              <img className='h-[50px] ml-2' src={logoFinal} />
+            </Link>
+
+            <nav className="flex items-center mx-auto justify-between">
+              <ul className=" text-[#000000] flex gap-x-6 font-semibold">
+                {/* <img className='  w-20 h-14'
+                            src={logo2} alt="Logo" width={50} height={15} loading="lazy">
+                            </img>  */}
+                <li className=" hover:text-deepgreen hover:underline">
+                  <Link to="/">Home</Link>
+                </li>
+                <li className=" hover:text-deepgreen hover:underline">
+                  <Link to="/about">About Us</Link>
+                </li>
+                <li className="  hover:text-deepgreen hover:underline ">
+                  <Link to="/informatory">Informatory</Link>
+                </li>
+                <li className=" hover:text-deepgreen hover:underline ">
+                  <Link to="/contact">Contact</Link>
+                </li>
+                <li className=" hover:text-deepgreen hover:underline ">
+                  <Link to="/rewards">Rewards</Link>
+                </li>
+              </ul>
+            </nav>
+            <div className='flex flex-row-reverse justify-between items-center'>
+              <Link to="https://parivesh.nic.in/About.aspx">
                 <img
-                  className="text-black"
-                  src={logo}
-                  alt="Logo"
-                  width={50}
-                  height={15}
-                  loading="lazy"
-                ></img>
+                  className='text-black'
+                  src={ew8} alt="Logo" width={50} height={15} loading="lazy"></img>
               </Link>
-              <h5 className=" text-[#000000] text-xs font-semibold">
-                Ministry of Environment , Forest
-                <br />
-                and Climate Change
-              </h5>
+              <Link to="https://parivesh.nic.in/About.aspx">
+                <h5 className=' text-[#000000] text-xs font-semibold'>Ministry of Environment , Forest<br />
+                  and Climate Change
+                </h5>
+              </Link>
             </div>
-          </div> */}
-          {/* <Navbar/> */}
+          </div>
+
         </div>
-        <div className="mt-0 mx-10 flex-col pt-28 gap-y-4">
+        <div className="mt-0 mx-10 flex-col pt-20 gap-y-4">
           <div className="mission h-[23.75rem] flex gap-x-5 justify-center items-center mb-3 ">
             <div className="text w-1/2">
               <h1 className="font-bold text-4xl ">Our Mission</h1>
@@ -143,6 +164,9 @@ const About = () => {
               <img className="h-[25rem] w-[31.25rem]" src={aboutWeb} alt="img" />
             </div>
           </div>
+        </div>
+        <div>
+          <Footer/>
         </div>
       </div>
     );

@@ -26,7 +26,7 @@ const Rewards = () => {
         const device = formData.device;
         const medium = formData.Medium;
         let coins = 0;
-        if (device === 'Mobile phone') {
+        if (device === 'Mobile') {
             if (medium < 2010) {
                 coins = 100;
             }
@@ -45,10 +45,10 @@ const Rewards = () => {
         else if (device === 'Printers') {
             coins = 20;
         }
-        else if (device === 'XRay Machine') {
+        else if (device === 'Xray') {
             coins = 50;
         }
-        else if (device === 'Medical Device') {
+        else if (device === 'Medical') {
             coins = 10;
         }
         else if (device === 'TV') {
@@ -72,12 +72,11 @@ const Rewards = () => {
         console.log(formData);
     }
     return (
-        <div className=' min-h-[100vh] w-full overflow-x-hidden'>
+        <div className='example min-h-[100vh] w-full overflow-x-hidden'>
             <div className="w-[100%] mx-auto flex items-center space-x-96 ml-96 mt-60 overflow-x-hidden ">
                 <div>
-                    <img
-                        className='absolute top-44 -left-12'
-                        src={pic1} width={950}></img>
+                    <img className='absolute top-44 -left-12'
+        src={pic1} width={950}></img>
                 </div>
                 {/* w-[80%] */}
                 <div className='flex flex-col space-y-10'>
@@ -90,12 +89,13 @@ const Rewards = () => {
                                     id="device"
                                     value={formData.device}
                                     onChange={changeHandler}
+                                    
                                 >
-                                    <option value="Mobile phone">Mobile phone</option>
+                                    <option value="Mobile">Mobile phone</option>
                                     <option value="Laptops">Laptops</option>
                                     <option value="Printers">Printers</option>
-                                    <option value="X-ray Machine">X-ray Machine</option>
-                                    <option value="Medical devices">Medical devices</option>
+                                    <option value="Xray">X-ray Machine</option>
+                                    <option value="Medical">Medical devices</option>
                                     <option value="TV">TV</option>
                                     <option value="Camera">Camera</option>
                                     <option value="gadget">Electronic Gadget</option>
@@ -119,8 +119,8 @@ const Rewards = () => {
                             </div>
                         </div>
                         <div className='my-3 flex space-x-3'>
-                            <button  onClick={onClickHandler} className='flex items-center space-x-3 px-4 py-2 font-bold bg-[#cce1e4]'>
-                                <div>  Calculate Coins  </div>
+                            <button  onClick={onClickHandler} className='flex hover:cursor-pointer items-center space-x-3 px-4 py-2 font-bold bg-[#cce1e4]'>
+                                <p>  Calculate Coins  </p>
                                 <div className='font-bold'><AiOutlineArrowRight /></div>
                             </button>
                             <input className="... ring-2  ring-inset w-40 rounded-md ml-40 px-3 py-2 text-center"

@@ -8,11 +8,14 @@ import ew5 from '../assets/ewaste13-1.png';
 import ew6 from '../assets/ewaste16-1.png';
 import ew7 from '../assets/ewaste17-1.png';
 // import logo from '../assets/Govlogo.png';
+import logoFinal from "../assets/logoFinal.png"
 import ew8 from '../assets/envlogo11-1.png';
+import Footer from '../Components/Footer';
+
 export const Informatory = () => {
   return (
     <div>
-        <div className='flex bg-[#d6f2f6] justify-between items-center w-full max-w-[1640px] h-[55px] mx-auto px-2'>
+        {/* <div className='flex bg-[#d6f2f6] justify-between items-center w-full max-w-[1640px] h-[55px] mx-auto px-2'>
             <div className='font-semibold'><Link to='/'>E-Swachh</Link></div>
             <div className='font-bold'>INFORMATORY</div>
             <div className='flex flex-row-reverse justify-between items-center'>
@@ -27,8 +30,49 @@ export const Informatory = () => {
                 </h5>
                 </Link>
             </div>
+        </div> */}
+      <div className='flex bg-[#edfbfd] opacity-1 z-10 fixed justify-between items-center w-full h-[55px] mx-auto px-2'>
+        {/* <div className='font-semibold'><Link to='/'>E-Swachh</Link></div> */}
+        <Link to="/">
+          <img className='h-[50px] ml-2' src={logoFinal} />
+        </Link>
+
+        <nav className="flex items-center mx-auto justify-between">
+          <ul className=" text-[#000000] flex gap-x-6 font-semibold">
+            {/* <img className='  w-20 h-14'
+                            src={logo2} alt="Logo" width={50} height={15} loading="lazy">
+                            </img>  */}
+            <li className=" hover:text-deepgreen hover:underline">
+              <Link to="/">Home</Link>
+            </li>
+            <li className=" hover:text-deepgreen hover:underline">
+              <Link to="/about">About Us</Link>
+            </li>
+            <li className="  hover:text-deepgreen hover:underline ">
+              <Link to="/informatory">Informatory</Link>
+            </li>
+            <li className=" hover:text-deepgreen hover:underline ">
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li className=" hover:text-deepgreen hover:underline ">
+              <Link to="/rewards">Rewards</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className='flex flex-row-reverse justify-between items-center'>
+          <Link to="https://parivesh.nic.in/About.aspx">
+            <img
+              className='text-black'
+              src={ew8} alt="Logo" width={50} height={15} loading="lazy"></img>
+          </Link>
+          <Link to="https://parivesh.nic.in/About.aspx">
+            <h5 className=' text-[#000000] text-xs font-semibold'>Ministry of Environment , Forest<br />
+              and Climate Change
+            </h5>
+          </Link>
         </div>
-        <div className='bg-[#edfbfd] mx-auto min-h-[100vh] px-8 pb-10'>
+      </div>
+        <div className='bg-[#edfbfd] mx-auto min-h-[100vh] pt-8 px-8 pb-10'>
           <p className='text-5xl pb-10 mx-10 pt-14'>Here's all you need to know about e-waste : </p>
           <div className='w-[95%] mx-auto flex flex-col space-y-7'>
             <div className='bg-[#ffffff] shadow-lg p-4 flex flex-row justify-center items-center rounded-xl w-full space-x-10'>
@@ -112,7 +156,10 @@ export const Informatory = () => {
               </div>
             </div>
           </div>
-        </div>
+      </div>
+      <div>
+        <Footer/>
+      </div>
     </div>
   )
 }
