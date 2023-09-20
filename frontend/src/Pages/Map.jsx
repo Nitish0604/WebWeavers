@@ -13,6 +13,7 @@ import Navbar from "../Components/Navbar";
 import { Link } from 'react-router-dom';
 import ew8 from '../assets/envlogo11-1.png';
 import logoFinal from "../assets/logoFinal.png"
+import Footer from "../Components/Footer";
 
 const Map = () => {
   const mapRef = useRef();
@@ -215,51 +216,11 @@ const Map = () => {
   }
   return (
     <div>
-    <div className=" flex flex-col">
-      {/* <div className=" z-[100]">
+    <div className=" flex flex-col space-y-28" >
+      <div className=" z-[100]">
         <Navbar />
-      </div> */}
-      <div className='flex bg-[#edfbfd] justify-between items-center w-full h-[55px] mx-auto px-2'>
-        {/* <div className='font-semibold'><Link to='/'>E-Swachh</Link></div> */}
-        <Link to="/">
-          <img className='h-[50px] ml-2' src={logoFinal} />
-        </Link>
-
-        <nav className="flex items-center mx-auto justify-between">
-          <ul className=" text-[#000000] flex gap-x-6 font-semibold">
-            {/* <img className='  w-20 h-14'
-                            src={logo2} alt="Logo" width={50} height={15} loading="lazy">
-                            </img>  */}
-            <li className=" hover:text-deepgreen hover:underline">
-              <Link to="/">Home</Link>
-            </li>
-            <li className=" hover:text-deepgreen hover:underline">
-              <Link to="/about">About Us</Link>
-            </li>
-            <li className="  hover:text-deepgreen hover:underline ">
-              <Link to="/informatory">Informatory</Link>
-            </li>
-            <li className=" hover:text-deepgreen hover:underline ">
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li className=" hover:text-deepgreen hover:underline ">
-              <Link to="/rewards">Rewards</Link>
-            </li>
-          </ul>
-        </nav>
-        <div className='flex flex-row-reverse justify-between items-center'>
-          <Link to="https://parivesh.nic.in/About.aspx">
-            <img
-              className='text-black'
-              src={ew8} alt="Logo" width={50} height={15} loading="lazy"></img>
-          </Link>
-          <Link to="https://parivesh.nic.in/About.aspx">
-            <h5 className=' text-[#000000] text-xs font-semibold'>Ministry of Environment , Forest<br />
-              and Climate Change
-            </h5>
-          </Link>
-        </div>
       </div>
+     
 
       <div class=" bg-black w-full flex justify-around z-[50] ">
         <div className=" bg-slate-700 w-[70%] p-1">
@@ -344,6 +305,9 @@ const Map = () => {
           ))}
         </div>
       </div>
+    </div>
+    <div>
+      <Footer/>
     </div>
     </div>
 

@@ -33,7 +33,7 @@ const Navbar = () => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userInfo"));
 
-    if (!user) navigate("/");
+    
   }, [user]);
 
   console.log(user);
@@ -123,9 +123,9 @@ const Navbar = () => {
                 <li className="  hover:text-deepgreen hover:underline ">
                   <Link to="/informatory">Informatory</Link>
                 </li>
-                <li className=" hover:text-deepgreen hover:underline ">
+                {/* <li className=" hover:text-deepgreen hover:underline ">
                   <Link to="/contact">Contact</Link>
-                </li>
+                </li> */}
                 <li className=" hover:text-deepgreen hover:underline ">
                   <Link to="/rewards">Rewards</Link>
                 </li>
