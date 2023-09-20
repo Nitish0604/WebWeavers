@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Homepage";
 import { Informatory } from "./Pages/Informatory";
-// import Rewards from "./Pages/Rewards";
+import Rewards from "./Pages/Rewards";
 import Auth from "./Pages/Auth"
 import About from "./Pages/About";
 import Map from "./Pages/Map";
@@ -15,12 +15,11 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/informatory' element={<Informatory />}></Route>
-        {/* //<Route path="/about" element = {<About  />} /> */}
+        <Route path='/informatory' element={<Informatory />}/>
         <Route path="/about" element={<About />} />
         <Route path="/auth" element={<Auth />} />
-        {/* <Route path='/rewards' element={<Rewards/>}></Route> */}
-        <Route path="/map" element={<Map/>}></Route>
+        <Route path='/rewards' element={<Rewards/>}/>
+        <Route path="/map" element={<Map/>}/>
       </Routes>
 
     </div>
