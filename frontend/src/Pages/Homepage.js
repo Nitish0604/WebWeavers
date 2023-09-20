@@ -16,29 +16,7 @@ import data from '../Components/data';
 import Locate from '../Components/Locate';
 import { useEffect } from 'react';
 function Home(props) {
-  const toast=useToast();
-  function popup() {
-    toast({
-      title: `${data[i].text}`,
-      status: "info",
-      duration: 5000,
-      isClosable: true,
-      position: "right",
-    });
-  }
-  let i=0
-  useEffect(() => {
-    const popupInterval = setInterval(() => {
-      popup();
-      i++;
-      if (i == 4) {
-        i = 0;
-      }
-    }, 40000);
-    return () => {
-      clearInterval(popupInterval);
-    };
-  }, []);
+
   return (
     <div>
       <div className='flex flex-col'>

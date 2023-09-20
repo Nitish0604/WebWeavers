@@ -17,51 +17,11 @@ const About = () => {
     return (
       <div>
         <div>
-          <div className='flex bg-[#edfbfd] opacity-1 z-10 fixed justify-between items-center w-full h-[55px] mx-auto px-2'>
-            {/* <div className='font-semibold'><Link to='/'>E-Swachh</Link></div> */}
-            <Link to="/">
-              <img className='h-[50px] ml-2' src={logoFinal} />
-            </Link>
-
-            <nav className="flex items-center mx-auto justify-between">
-              <ul className=" text-[#000000] flex gap-x-6 font-semibold">
-                {/* <img className='  w-20 h-14'
-                            src={logo2} alt="Logo" width={50} height={15} loading="lazy">
-                            </img>  */}
-                <li className=" hover:text-deepgreen hover:underline">
-                  <Link to="/">Home</Link>
-                </li>
-                <li className=" hover:text-deepgreen hover:underline">
-                  <Link to="/about">About Us</Link>
-                </li>
-                <li className="  hover:text-deepgreen hover:underline ">
-                  <Link to="/informatory">Informatory</Link>
-                </li>
-                <li className=" hover:text-deepgreen hover:underline ">
-                  <Link to="/contact">Contact</Link>
-                </li>
-                <li className=" hover:text-deepgreen hover:underline ">
-                  <Link to="/rewards">Rewards</Link>
-                </li>
-              </ul>
-            </nav>
-            <div className='flex flex-row-reverse justify-between items-center'>
-              <Link to="https://parivesh.nic.in/About.aspx">
-                <img
-                  className='text-black'
-                  src={ew8} alt="Logo" width={50} height={15} loading="lazy"></img>
-              </Link>
-              <Link to="https://parivesh.nic.in/About.aspx">
-                <h5 className=' text-[#000000] text-xs font-semibold'>Ministry of Environment , Forest<br />
-                  and Climate Change
-                </h5>
-              </Link>
-            </div>
-          </div>
+         <Navbar/>
 
         </div>
         <div className="mt-0 mx-10 flex-col pt-20 gap-y-4">
-          <div className="mission h-[23.75rem] flex gap-x-5 justify-center items-center mb-3 ">
+          <div className="mission h-[23.75rem] flex gap-x-5 justify-center items-center mb-3 mt-2 ">
             <div className="text w-1/2">
               <h1 className="font-bold text-4xl ">Our Mission</h1>
               <p className="mt-2 text-left w-[31.25rem] space-y-3">

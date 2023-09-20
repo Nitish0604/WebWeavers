@@ -15,12 +15,12 @@ function Locate() {
         <div className='flex flex-col space-y-4'>
             <div className='text-4xl font-bold'>Locate your nearest e-waste facility!</div>
             <div>
-            {/* <Link to="/map"> */}
+            <Link to="/map">
             <button className='flex items-center space-x-1 px-4 py-2 rounded-full font-bold bg-[#55545442]' >
                 <div>Find now</div>
                 <div><AiOutlineArrowRight/></div>
             </button>
-            {/* </Link> */}
+            </Link>
             </div>
         </div>
     </div>
