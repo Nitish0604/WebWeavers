@@ -9,6 +9,8 @@ import About from "./Pages/About";
 import Map from "./Pages/Map";
 import { useToast } from "@chakra-ui/react";
 import data from "./Components/data"
+import Facility from "./Pages/Facility";
+
 function App() {
     const toast = useToast();
     function popup() {
@@ -45,6 +47,7 @@ function App() {
         <Route path="/auth" element={<Auth />} />
         <Route path='/rewards' element={<Rewards/>}/>
         <Route path="/map" element={<Map/>}/>
+        <Route path ="/facility" element ={<Facility/>}/>
       </Routes>
 
     </div>
