@@ -1,7 +1,8 @@
 
-const User = require("../models/userModel");
+const User = require("../models/User");
 const generateToken = require("../config/generateToken");
-
+const Profile = require("../models/Profile");
+const Metals = require("../models/Metals");
 
 
 //@description     Register new user
@@ -18,29 +19,43 @@ const registerUser = async (req, res) => {
   const userExists = await User.findOne({ email });
 
   if (userExists) {
-    res.status(400);
-    throw new Error("User already exists");
+    return res.status(400).json({
+      success: false,
+      message: "User already exists. Please sign in to continue.",
+    });
   }
+  const metalsExtracted = await Metals.create({
+    gold: "",
+    silver: "",
+    iron: "",
+    other: "",
+  });
 
+   const profileDetails = await Profile.create({
+     dateOfBirth: "",
+     contactNumber: "",
+     gender: "",
+   });
   const user = await User.create({
     name,
     email,
     password,
     pic,
+      additionalDetails: profileDetails._id,
+      metalsExtracted: metalsExtracted._id,
   });
 
   if (user) {
     res.status(201).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      isAdmin: user.isAdmin,
-      pic: user.pic,
-      token: generateToken(user._id),
+      user,
+      token: generateToken(user._id, user.name, user.email),
+      message: "User registered successfully",
     });
   } else {
-    res.status(400);
-    throw new Error("User not found");
+    return res.status(500).json({
+      success: false,
+      message: "User cannot be registered. Please try again.",
+    });
   }
 };
 
@@ -57,14 +72,29 @@ const authUser = async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
-      isAdmin: user.isAdmin,
+
       pic: user.pic,
       token: generateToken(user._id),
     });
   } else {
-    res.status(401);
-    throw new Error("Invalid Email or Password");
+    res.status(401).json({
+      message:"invalid username and pasword"
+    })
+   
   }
 };
+const allUsers = async (req, res) => {
+  const keyword = req.query.search
+    ? {
+        $or: [
+          { name: { $regex: req.query.search, $options: "i" } },
+          { email: { $regex: req.query.search, $options: "i" } },
+        ],
+      }
+    : {};
 
-module.exports = {  registerUser, authUser };
+  const users = await User.find(keyword);
+  res.send(users);
+};
+
+module.exports = {  registerUser, authUser , allUsers };
