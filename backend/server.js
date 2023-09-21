@@ -9,13 +9,15 @@ dotenv.config();
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const dbconnect = require("./config/db");
 
+const profileRoutes = require("./routes/profileRoute")
 
 dbconnect();
 
 
 
-app.use(express.json());
+app.use(express.json({ extended: true }));
 app.use("/api/user", userRoutes);
+app.use("/api/user/",profileRoutes)
 
 
 app.use(notFound);

@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
-const User = require("../models/userModel.js");
-
+const User = require("../models/User");
 
 const protect = async (req, res, next) => {
   let token;
@@ -13,6 +12,7 @@ const protect = async (req, res, next) => {
 
       //decodes token id sends it without password
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      req.user = decoded;
       req.user = await User.findById(decoded.id).select("-password");
 
       next();
