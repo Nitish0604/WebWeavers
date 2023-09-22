@@ -22,8 +22,12 @@ const userSchema = mongoose.Schema(
     
       ref: "Metals",
     },
+    credits: {
+      type: "Number",
+      default: "0"
+    }
   },
-  { timestaps: true }
+  { timestamps: true }
 );
 
 userSchema.methods.matchPassword = async function (enteredPassword) {
