@@ -65,7 +65,8 @@ const SearchBar = () => {
 
     //storing the data on the basis of the search query
 
-    const { data } = await axios.get(`/api/user/allusers?search=${search}`,
+    const { data } = await axios.get(
+      `http://localhost:5000/api/user/allusers?search=${search}`,
       config
     );
     console.log(data);

@@ -50,11 +50,11 @@ const Signup = () => {
     try {
       const config = {
         headers: {
-          "Content-type": "application/json",
+          "Content-Type": "application/json",
         },
       };
-      const data =  await axios.post(
-        "/api/user",
+      const data = await axios.post(
+        "http://localhost:5000/api/user",
         {
           name,
           email,
