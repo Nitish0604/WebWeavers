@@ -6,15 +6,11 @@ const metalSchema = new mongoose.Schema({
     type: Number,
     default: "4000",
   },
-  iron: {
-    type: Number,
-    default: "4000",
-  },
   silver: {
     type: Number,
     default: "4000",
   },
-  iron: {
+  copper: {
     type: Number,
     default: "4000",
   },
