@@ -107,7 +107,7 @@ const Navbar = () => {
         <div>
           <div className="flex fixed  bg-[#edfbfd] justify-between items-center w-[100vw] max-w-[1640px]  mx-auto h-[60px] z-[50]">
             <Link to="/">
-              <img className='h-[50px] ml-2' src={logoFinal} />
+              <img className="h-[50px] ml-2" src={logoFinal} />
             </Link>
             <nav className="flex items-center mx-auto justify-between">
               <ul className=" text-[#000000] flex gap-x-6 font-semibold">
@@ -148,7 +148,9 @@ const Navbar = () => {
                       />
                     </MenuButton>
                     <MenuList>
-                      <MenuItem>My Profile</MenuItem> <MenuDivider />
+                      <Link to="/Userdashboard">
+                        <MenuItem>My Profile</MenuItem> <MenuDivider />
+                        </Link>
                       <MenuItem onClick={logoutHandler}>Logout</MenuItem>
                     </MenuList>
                   </Menu>

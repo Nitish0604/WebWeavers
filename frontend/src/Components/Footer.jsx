@@ -4,7 +4,7 @@ import swachhBharat from "../assets/swachh-bharat.png"
 import digitalIndia from "../assets/digital-india-logo.png"
 import nicLogo from "../assets/nic_logo.png"
 import indiaGov from "../assets/india-gov-logo.png"
-
+import { Link } from 'react-router-dom'
 const Footer = () => {
     return (
         <div>
@@ -14,7 +14,9 @@ const Footer = () => {
                     <div className=''>
                         <div className='flex-col justify-evenly mt-6 space-y-5'>
                             <div>
-                                <a>Factory Login</a>
+                                <Link to='/facilitylogin'>
+                                    <a>Factory Login</a>
+                                </Link>
                             </div>
                             <div>
                                 Terms of Service
