@@ -72,7 +72,7 @@ const authUser = async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
-
+      credits: user.credits,
       pic: user.pic,
       token: generateToken(user._id),
     });
@@ -85,11 +85,11 @@ const authUser = async (req, res) => {
 const allUsers = async (req, res) => {
   const keyword = req.query.search
     ? {
-        $or: [
-          { name: { $regex: req.query.search, $options: "i" } },
-          { email: { $regex: req.query.search, $options: "i" } },
-        ],
-      }
+      $or: [
+        { name: { $regex: req.query.search, $options: "i" } },
+        { email: { $regex: req.query.search, $options: "i" } },
+      ],
+    }
     : {};
 
   const users = await User.find(keyword);
@@ -98,9 +98,9 @@ const allUsers = async (req, res) => {
 const pushFormData = async (req, res) => {
   try {
     let id = req.params.userId;
-  
-     console.log(id)
-    const { gold, silver, others, copper} = req.body;
+
+    console.log(id)
+    const { gold, silver, others, copper } = req.body;
     const userDetails = await User.findById(id);
     //console.log(userDetails)
     ///console.log(userDetails.metalsExtracted);
@@ -116,6 +116,11 @@ const pushFormData = async (req, res) => {
         new: true,
       }
     );
+    const credits = ((gold * 5.278) + (silver * 74.5) + (copper * 0.727) + (others * 0.5)) / 10;
+    // console.log(credits);
+    // userDetails.credits = credits;
+    // console.log(userDetails.credits);
+
     if (!metals) {
       return res.status(404).json({
         success: false,
@@ -126,10 +131,12 @@ const pushFormData = async (req, res) => {
     // Update the user object with the new profile information
     const user = await User.findByIdAndUpdate(id, {
       metalsExtracted: metals._id,
+      credits: credits
     });
     const updatedUserDetails = await User.findById(id)
       .populate("metalsExtracted")
       .populate("additionalDetails")
+      .populate("credits")
       .exec();
     return res.json({
       success: true,
@@ -148,6 +155,6 @@ const pushFormData = async (req, res) => {
 
 module.exports = { registerUser, authUser, allUsers, pushFormData };
 
- // Replace this with your data storage or API logic
+// Replace this with your data storage or API logic
 
 // Controller function to push form data using user ID
