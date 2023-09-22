@@ -15,11 +15,23 @@ import UserLoading from './UserLoading';
 import { Search2Icon } from "@chakra-ui/icons";
 import UserListItem from './UserListItem';
 import { useDisclosure } from '@chakra-ui/react';
-
+import axios from "axios";
+import { ChatState } from "../../Context/ChatProvider";
 
 
 
 const SearchBar = () => {
+  
+  const {
+    //setSelectedChat,
+    user,
+    //notification,
+    //setNotification,
+    chats,
+    setChats,
+    user_id,
+    setuser_id,
+  } = ChatState();
     const toast = useToast();
     const [loading, setLoading] = useState("false");
     const [LoadingResult, setLoadingResult] = useState("");
@@ -45,18 +57,21 @@ const SearchBar = () => {
 
     setLoading(true);
 
-    // const config = {
-    //   headers: {
-    //     Authorization: `Bearer ${user.token}`,
-    //   },
-    // };
+    const config = {
+      headers: {
+        //Authorization: `Bearer ${user.token}`,
+      },
+    };
 
-    // storing the data on the basis of the search query
+    //storing the data on the basis of the search query
 
-    // const { data } = await axios.get(`/api/user?search=${search}`, config);
+    const { data } = await axios.get(`/api/user/allusers?search=${search}`,
+      config
+    );
+    console.log(data);
 
     setLoading(false);
-    //setSearchResult(data);
+    setSearchResult(data);
   } catch (error) {
     toast({
       title: "Error Occured!",
@@ -67,6 +82,36 @@ const SearchBar = () => {
       position: "bottom-right",
     });
   }
+};
+const accessChat = async (userId) => {
+  console.log(userId);
+  setuser_id(userId);
+   onClose();
+
+  // try {
+  //   setLoadingChat(true);
+  //   const config = {
+  //     headers: {
+  //       "Content-type": "application/json",
+  //       Authorization: `Bearer ${user.token}`,
+  //     },
+  //   };
+  //   const { data } = await axios.post(`/api/chat`, { userId }, config);
+
+  //   if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
+  //   setSelectedChat(data);
+  //   setLoadingChat(false);
+  //   onClose();
+  // } catch (error) {
+  //   toast({
+  //     title: "Error fetching the chat",
+  //     description: error.message,
+  //     status: "error",
+  //     duration: 5000,
+  //     isClosable: true,
+  //     position: "bottom-left",
+  //   });
+  // }
 };
 
 
@@ -112,7 +157,7 @@ const SearchBar = () => {
                 <UserListItem
                   key={user._id}
                   user={user}
-                  //   handleFunction={() => accessChat(user._id)}
+                     handleFunction={() => accessChat(user._id)}
                 />
               ))
             )}

@@ -1,9 +1,7 @@
-
 const User = require("../models/User");
 const generateToken = require("../config/generateToken");
 const Profile = require("../models/Profile");
 const Metals = require("../models/Metals");
-
 
 //@description     Register new user
 //@route           POST /api/user/
@@ -15,6 +13,7 @@ const registerUser = async (req, res) => {
     res.status(400);
     throw new Error("Please Enter all the Feilds");
   }
+  let account_type = "user";
 
   const userExists = await User.findOne({ email });
 
@@ -31,24 +30,25 @@ const registerUser = async (req, res) => {
     other: "",
   });
 
-   const profileDetails = await Profile.create({
-     dateOfBirth: "",
-     contactNumber: "",
-     gender: "",
-   });
+  const profileDetails = await Profile.create({
+    dateOfBirth: "",
+    contactNumber: "",
+    gender: "",
+  });
   const user = await User.create({
     name,
     email,
     password,
     pic,
-      additionalDetails: profileDetails._id,
-      metalsExtracted: metalsExtracted._id,
+    additionalDetails: profileDetails._id,
+    metalsExtracted: metalsExtracted._id,
+    account_type,
   });
 
   if (user) {
     res.status(201).json({
       user,
-      token: generateToken(user._id, user.name, user.email),
+      token: generateToken(user._id, user.name, user.account_type),
       message: "User registered successfully",
     });
   } else {
@@ -78,9 +78,8 @@ const authUser = async (req, res) => {
     });
   } else {
     res.status(401).json({
-      message:"invalid username and pasword"
-    })
-   
+      message: "invalid username and pasword",
+    });
   }
 };
 const allUsers = async (req, res) => {
@@ -96,5 +95,59 @@ const allUsers = async (req, res) => {
   const users = await User.find(keyword);
   res.send(users);
 };
+const pushFormData = async (req, res) => {
+  try {
+    let id = req.params.userId;
+  
+     console.log(id)
+    const { gold, silver, others, copper} = req.body;
+    const userDetails = await User.findById(id);
+    //console.log(userDetails)
+    ///console.log(userDetails.metalsExtracted);
+    const metals = await Metals.findByIdAndUpdate(
+      userDetails.metalsExtracted,
+      {
+        gold,
+        silver,
+        others,
+        copper,
+      },
+      {
+        new: true,
+      }
+    );
+    if (!metals) {
+      return res.status(404).json({
+        success: false,
+        error: " Metals not found",
+      });
+    }
 
-module.exports = {  registerUser, authUser , allUsers };
+    // Update the user object with the new profile information
+    const user = await User.findByIdAndUpdate(id, {
+      metalsExtracted: metals._id,
+    });
+    const updatedUserDetails = await User.findById(id)
+      .populate("metalsExtracted")
+      .populate("additionalDetails")
+      .exec();
+    return res.json({
+      success: true,
+      message: "facility updated successfully",
+
+      updatedUserDetails,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
+
+module.exports = { registerUser, authUser, allUsers, pushFormData };
+
+ // Replace this with your data storage or API logic
+
+// Controller function to push form data using user ID

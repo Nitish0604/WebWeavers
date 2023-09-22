@@ -50,7 +50,7 @@ function App() {
         <Route path="/auth" element={<Auth />} />
         <Route path="/rewards" element={<Rewards />} />
         <Route path="/map" element={<Map />} />
-        <Route path="/facility" element={<Facility />} />
+        {/* <Route path="/facility" element={<Facility />} /> */}
         <Route path="/direction" element={<Direction />}></Route>
         <Route path="/facilitylogin" element={<FacilityAuth />}></Route>
         <Route path="/facilitydashboard" element={<FacilityDashboard />}></Route>
