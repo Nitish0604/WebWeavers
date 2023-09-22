@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import pic1 from "../assets/gift1.png";
 import gift1 from '../assets/gift1-1.png';
+import { ChatState } from "../Context/ChatProvider";
+
 const Rewards = () => {
+    const { user, setUser } = ChatState();
+    console.log(user);
     const [value, setValue] = useState(100);
-    const [reward, setReward] = useState(1000);
+    const [reward, setReward] = useState(user.credits);
     const [formData, setFormData] = useState({ device: "", Medium: "" });
     function changeHandler(event) {
         const { name, value } = event.target
@@ -15,9 +19,10 @@ const Rewards = () => {
             }
         });
     }
-    function remaningcoins() {
+    function remainingCoins() {
         setReward(reward - 50);
     }
+
     function onClickHandler(event) {
         event.preventDefault();
         //print
@@ -28,40 +33,40 @@ const Rewards = () => {
         let coins = 0;
         if (device === 'Mobile') {
             if (medium < 2010) {
-                coins = 100;
+                coins = 250;
             }
             else {
-                coins = 50;
+                coins = 150;
             }
         }
         else if (device === 'Laptops') {
             if (medium < 2010) {
-                coins = 50;
+                coins = 150;
             }
             else {
-                coins = 20;
+                coins = 100;
             }
         }
         else if (device === 'Printers') {
-            coins = 20;
+            coins = 100;
         }
         else if (device === 'Xray') {
-            coins = 50;
+            coins = 150;
         }
         else if (device === 'Medical') {
-            coins = 10;
+            coins = 50;
         }
         else if (device === 'TV') {
-            coins = 10;
+            coins = 50;
         }
         else if (device === 'Camera') {
-            coins = 10;
+            coins = 50;
         }
         else if (device === 'gadget') {
-            coins = 10;
+            coins = 50;
         }
         else if (device === 'appliance') {
-            coins = 5;
+            coins = 25;
         }
         setValue(coins);
     }
@@ -170,7 +175,7 @@ const Rewards = () => {
                                         <div>Seller: 'AMZ Seller Ghz'</div>
                                         <div>Price: 1999</div>
                                     </div>
-                                    <button className='my-2 rounded-md px-2 py-1 bg-[#7ce5e5] w-fit' onClick={remaningcoins}>Redeem Voucher</button>
+                                    <button className='my-2 rounded-md px-2 py-1 bg-[#7ce5e5] w-fit' onClick={remainingCoins}>Redeem Voucher</button>
                                 </div>
                             </div>
                         </div>
@@ -192,7 +197,7 @@ const Rewards = () => {
                                         <div>Seller: 'Watch Ltd Siyana'</div>
                                         <div>Price: 2999</div>
                                     </div>
-                                    <button className='my-2 rounded-md px-2 py-1 bg-[#f396e9] w-fit' onClick={remaningcoins}>Redeem Voucher</button>
+                                    <button className='my-2 rounded-md px-2 py-1 bg-[#f396e9] w-fit' onClick={remainingCoins}>Redeem Voucher</button>
                                 </div>
                             </div>
                         </div>
@@ -214,7 +219,7 @@ const Rewards = () => {
                                         <div>Seller: 'Watch Ltd Siyana'</div>
                                         <div>Price: 2999</div>
                                     </div>
-                                    <button className='my-2 rounded-md px-2 py-1 bg-[#89ee96] w-fit' onClick={remaningcoins}>Redeem Voucher</button>
+                                    <button className='my-2 rounded-md px-2 py-1 bg-[#89ee96] w-fit' onClick={remainingCoins}>Redeem Voucher</button>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +241,7 @@ const Rewards = () => {
                                         <div>Seller: 'Watch Ltd Siyana'</div>
                                         <div>Price: 2999</div>
                                     </div>
-                                    <button className='my-2 rounded-md px-2 py-1 bg-[#ecf090] w-fit' onClick={remaningcoins}>Redeem Voucher</button>
+                                    <button className='my-2 rounded-md px-2 py-1 bg-[#ecf090] w-fit' onClick={remainingCoins}>Redeem Voucher</button>
                                 </div>
                             </div>
                         </div>
@@ -260,7 +265,7 @@ const Rewards = () => {
                                         <div>Seller: 'Watch Ltd Siyana'</div>
                                         <div>Price: 2999</div>
                                     </div>
-                                    <button className='my-2 rounded-md px-2 py-1 bg-[#e9d293] w-fit' onClick={remaningcoins}>Redeem Voucher</button>
+                                    <button className='my-2 rounded-md px-2 py-1 bg-[#e9d293] w-fit' onClick={remainingCoins}>Redeem Voucher</button>
                                 </div>
                             </div>
                         </div>
@@ -282,7 +287,7 @@ const Rewards = () => {
                                         <div>Seller: 'Watch Ltd Siyana'</div>
                                         <div>Price: 2999</div>
                                     </div>
-                                    <button className='my-2 rounded-md px-2 py-1 bg-[#9f94ef] w-fit' onClick={remaningcoins}>Redeem Voucher</button>
+                                    <button className='my-2 rounded-md px-2 py-1 bg-[#9f94ef] w-fit' onClick={remainingCoins}>Redeem Voucher</button>
                                 </div>
                             </div>
                         </div>
@@ -304,7 +309,7 @@ const Rewards = () => {
                                         <div>Seller: 'Watch Ltd Siyana'</div>
                                         <div>Price: 2999</div>
                                     </div>
-                                    <button className='my-2 rounded-md px-2 py-1 bg-[#dd7fba] w-fit' onClick={remaningcoins}>Redeem Voucher</button>
+                                    <button className='my-2 rounded-md px-2 py-1 bg-[#dd7fba] w-fit' onClick={remainingCoins}>Redeem Voucher</button>
                                 </div>
                             </div>
                         </div>
@@ -326,7 +331,7 @@ const Rewards = () => {
                                         <div>Seller: 'Watch Ltd Siyana'</div>
                                         <div>Price: 2999</div>
                                     </div>
-                                    <button className='my-2 rounded-md px-2 py-1 bg-[#65d5b7] w-fit' onClick={remaningcoins}>Redeem Voucher</button>
+                                    <button className='my-2 rounded-md px-2 py-1 bg-[#65d5b7] w-fit' onClick={remainingCoins}>Redeem Voucher</button>
                                 </div>
                             </div>
                         </div>
