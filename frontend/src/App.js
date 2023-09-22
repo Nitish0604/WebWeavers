@@ -10,6 +10,11 @@ import Map from "./Pages/Map";
 import { useToast } from "@chakra-ui/react";
 import data from "./Components/data"
 import Facility from "./Pages/Facility";
+import Direction from "./Pages/Direction";
+import FacilityAuth from "./Pages/FacilityAuth";
+import FacilityDashboard from "./Pages/FacilityDashboard";
+import UserDashboard from "./Pages/UserDashboard";
+
 
 function App() {
     const toast = useToast();
@@ -37,21 +42,21 @@ function App() {
       };
     }, []);
   return (
-
-    <div className=' app'>
-    
+    <div className=" app">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/informatory' element={<Informatory />}/>
+        <Route path="/informatory" element={<Informatory />} />
         <Route path="/about" element={<About />} />
         <Route path="/auth" element={<Auth />} />
-        <Route path='/rewards' element={<Rewards/>}/>
-        <Route path="/map" element={<Map/>}/>
-        <Route path ="/facility" element ={<Facility/>}/>
+        <Route path="/rewards" element={<Rewards />} />
+        <Route path="/map" element={<Map />} />
+        <Route path="/facility" element={<Facility />} />
+        <Route path="/direction" element={<Direction />}></Route>
+        <Route path="/facilitylogin" element={<FacilityAuth />}></Route>
+        <Route path="/facilitydashboard" element={<FacilityDashboard />}></Route>
+        <Route path="/Userdashboard" element={<UserDashboard/>}></Route>
       </Routes>
-
     </div>
-
   );
 }
 
