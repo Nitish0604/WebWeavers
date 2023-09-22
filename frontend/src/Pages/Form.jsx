@@ -95,16 +95,17 @@ const Form = () => {
                   let
                   the world surprise you.' Grant us access to your device's location to unlock personalized
                   recommendations and experiences.</div>
-                <button type="button">Search Near Me</button>
+                  <Link to="../map"> <button type="button">Search Near Me</button></Link>
+                
               </div>
             </div>
-
+ 
             <div class="img1">
               <img src={image2} alt="" className='w-[100%] h-[100%]' />
               <div class="content">
                 <div class="head-section">Enjoy PickUp Facility</div>
                 <div class="mid-section">I must say, the convenience of the pickup facility has truly enhanced my experience. It's so convenient to simply schedule a pickup and have my items ready without any hassle.</div>
-                <button type="button">Search Near Me</button>
+                <Link to="../map"> <button type="button">Search Near Me</button></Link>
               </div>
             </div>
 
@@ -113,7 +114,7 @@ const Form = () => {
               <div class="content">
                 <div class="head-section">Your Personal Assistant,<br /> Always Ready</div>
                 <div class="mid-section">Our 24/7 Chatbot is your round-the-clock companion, ready to simplify your life and provide solutions whenever you need them.</div>
-                <button type="button">Chat Us</button>
+                <Link to="/"> <button type="button">chat us</button></Link>
               </div>
             </div>
 
@@ -122,7 +123,7 @@ const Form = () => {
               <div class="content">
                 <div class="head-section">Earn More Rewards:<br />Your Pathway to Greater Benefits and Perks</div>
                 <div class="mid-section">Maximize your rewards potential with our exclusive program. Unlock exciting opportunities and benefits, and watch your earnings grow as you engage with our platform.</div>
-                <button type="button">Redeem Points</button>
+                <Link to="../rewards"> <button type="button">Reedem point</button></Link>
               </div>
             </div>
           </div>
