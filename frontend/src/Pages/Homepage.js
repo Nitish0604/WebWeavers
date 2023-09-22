@@ -14,6 +14,7 @@ import { useToast } from '@chakra-ui/react';
 // import ScrollText from '../Components/ScrollText';
 import data from '../Components/data';
 import Locate from '../Components/Locate';
+import Pickup from '../Components/Pickup';
 import { useEffect } from 'react';
 function Home(props) {
 
@@ -88,6 +89,9 @@ function Home(props) {
         </div>
         <div>
           <Info />
+        </div>
+        <div>
+          <Pickup/>
         </div>
         <div>
           <Footer/>
