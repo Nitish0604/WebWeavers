@@ -32,6 +32,13 @@ const FacilityDashboard = () => {
     setIsEditing(!isEditing);
   };
 
+  function resetForm() {
+    setGold(0);
+    setSilver(0);
+    setCopper(0);
+    setOthers(0);
+  }
+
   const submitHandler = async (e) => {
     e.preventDefault();
     //console.log(name, email, password, pic);
@@ -54,6 +61,7 @@ const FacilityDashboard = () => {
       };
       const data = await axios.request(config);
       console.log(data);
+      resetForm();
       toast({
         title: "data send",
         status: "success",
