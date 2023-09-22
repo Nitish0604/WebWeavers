@@ -114,7 +114,7 @@ const Form = () => {
               <div class="content">
                 <div class="head-section">Your Personal Assistant,<br /> Always Ready</div>
                 <div class="mid-section">Our 24/7 Chatbot is your round-the-clock companion, ready to simplify your life and provide solutions whenever you need them.</div>
-                <Link to="/"> <button type="button">chat us</button></Link>
+                <Link to="/"> <button type="button">Chat With us</button></Link>
               </div>
             </div>
 
@@ -123,7 +123,7 @@ const Form = () => {
               <div class="content">
                 <div class="head-section">Earn More Rewards:<br />Your Pathway to Greater Benefits and Perks</div>
                 <div class="mid-section">Maximize your rewards potential with our exclusive program. Unlock exciting opportunities and benefits, and watch your earnings grow as you engage with our platform.</div>
-                <Link to="../rewards"> <button type="button">Reedem point</button></Link>
+                <Link to="../rewards"> <button type="button">Redeem point</button></Link>
               </div>
             </div>
           </div>
