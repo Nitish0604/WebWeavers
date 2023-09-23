@@ -48,7 +48,7 @@ const FacilityDashboard = () => {
       const config = {
         method: "post",
         maxBodyLength: Infinity,
-        url: "http://localhost:5000/api/user/pushform/650c03ef2f9dc1f94fac9160",
+        url: "http://localhost:5000/api/user/pushform/650e89664fcfaa7603d43fd1",
         headers: {
           "Content-Type": "application/json",
         },
@@ -165,7 +165,7 @@ const FacilityDashboard = () => {
                 htmlFor="Gold Extracted"
                 className="block text-gray-700 font-bold mb-2"
               >
-                Gold Extracted:
+                Gold Extracted (in mg):
               </label>
               <input
                 type="text"
@@ -182,7 +182,7 @@ const FacilityDashboard = () => {
                 htmlFor="Silver Extracted"
                 className="block text-gray-700 font-bold mb-2"
               >
-                Silver Extracted:
+                Silver Extracted (in g):
               </label>
               <input
                 type="text"
@@ -199,7 +199,7 @@ const FacilityDashboard = () => {
                 htmlFor="Copper Extracted"
                 className="block text-gray-700 font-bold mb-2"
               >
-                Copper Extracted:
+                Copper Extracted (in g):
               </label>
               <input
                 type="text"
@@ -216,7 +216,7 @@ const FacilityDashboard = () => {
                 htmlFor="Gold Extracted"
                 className="block text-gray-700 font-bold mb-2"
               >
-                others:
+                others (in g):
               </label>
               <input
                 type="text"

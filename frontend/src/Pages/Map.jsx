@@ -295,13 +295,13 @@ const Map = () => {
                 )}{" "}
                 km away from your location
               </div>
-              <Link to='/direction'>
+              {/* <Link to='/direction'>
                 <span className="flex space-x-4">
                   <a class="text-blue-600 hover:text-blue-800 flex items-center mt-5">
                     Get Directions
                   </a>
                 </span>
-                </Link>
+                </Link> */}
             </div>
           ))}
         </div>

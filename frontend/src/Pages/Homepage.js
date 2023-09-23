@@ -160,9 +160,10 @@ function Home(props) {
         <div>
           <Info />
         </div>
-        <div>
-          <Pickup />
-        </div>
+       <div>
+        <Pickup/>
+       </div>
+       
         <div>
           <Footer />
         </div>

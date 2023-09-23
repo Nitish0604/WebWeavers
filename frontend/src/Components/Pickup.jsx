@@ -12,7 +12,7 @@ function Pickup(){
             <div className='flex flex-col space-y-4'>
                 <div className='text-4xl font-bold'>Schedule a pick-up for your e-waste!</div>
                 <div>
-                <Link to="/map">
+                <Link to="/pickupForm">
                 <button className='flex items-center space-x-1 px-4 py-2 rounded-full font-bold bg-[#55545442]' >
                     <div>Schedule now</div>
                     <div><AiOutlineArrowRight/></div>

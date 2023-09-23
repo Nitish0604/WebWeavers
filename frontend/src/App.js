@@ -14,6 +14,7 @@ import Direction from "./Pages/Direction";
 import FacilityAuth from "./Pages/FacilityAuth";
 import FacilityDashboard from "./Pages/FacilityDashboard";
 import UserDashboard from "./Pages/UserDashboard";
+import Form from "./Pages/Form"
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
         <Route path="/facilitylogin" element={<FacilityAuth />}></Route>
         <Route path="/facilitydashboard" element={<FacilityDashboard />}></Route>
         <Route path="/Userdashboard" element={<UserDashboard/>}></Route>
+        <Route path ="/pickupForm" element={<Form/>}/>
       </Routes>
     </div>
   );
