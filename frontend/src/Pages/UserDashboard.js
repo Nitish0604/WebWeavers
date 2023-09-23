@@ -10,6 +10,7 @@ import { ChatState } from "../Context/ChatProvider";
 import Coins from "../assets/coins.png"
 
 const UserDashboard = () => {
+
   const toast = useToast();
   const [userInfo, setUserInfo] = useState({
     name: "Kolkata Municipal Corporation",
@@ -21,7 +22,7 @@ const UserDashboard = () => {
   const [coins, setcoins] = useState();
   // const [others, setOthers] = useState();
   const { user, setUser } = ChatState();
-  console.log({ user });
+  console.log( user );
 
   const [isEditing, setIsEditing] = useState(false);
 
