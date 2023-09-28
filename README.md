@@ -1,7 +1,7 @@
 
 
 
-Project Name: eswacch
+Project Name: eswachh
 
 Stack: MERN Stack (React, Node.js, Express, MongoDB)
 
